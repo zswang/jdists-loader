@@ -1,0 +1,40 @@
+{
+  "name": "jdists-loader",
+  "version": "0.0.13",
+  "author": {
+    "name": "zswang",
+    "url": "http://weibo.com/zswang"
+  },
+  "description": "jdists loader module for webpack",
+  "peerDependencies": {
+    "jdists": "^1.2.4"
+  },
+  "devDependencies": {
+    "enhanced-require": "^0.5.0-beta6",
+    "extract-text-webpack-plugin": "^0.5.0",
+    "jdists": "^1.2.4",
+    "mocha": "^2.0.1",
+    "raw-loader": "^0.5.1",
+    "should": "^5.2.0",
+    "webpack": "^1.1.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zswang/jdists-loader.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "loader-utils": "^0.2.5"
+  },
+  "scripts": {
+    "_update_version": "jdists version.jdists",
+    "_dist": "jdists src/jdists-loader.js -o lib/jdists-loader.js",
+    "dist": "npm run _update_version && npm run _dist && npm run test",
+    "test": "mocha -R spec",
+    "lint": "jshint src/*.js"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ]
+}

@@ -1,0 +1,6 @@
+/*<jdists>
+console.log('Hello World!');
+</jdists>*/
+/*<remove trigger="debug">*/
+console.log('debug');
+/*</remove>*/
