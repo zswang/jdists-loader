@@ -17,19 +17,20 @@
  */
 /*</jdists>*/
 
-var jdists = require('jdists');
-var fs = require('fs');
-var loaderUtils = require('loader-utils');
-var path = require('path');
+var jdists = require("jdists");
+var fs = require("fs");
+var loaderUtils = require("loader-utils");
+var path = require("path");
 
 module.exports = function(source) {
-  var loaderContext = this;
+  if (this.cacheable) this.cacheable();
   var query = loaderUtils.parseQuery(this.query);
-  return jdists.build(source, {
+  var output = jdists.build(source, {
     fromString: true,
     path: this.resource,
     remove: query.remove,
     trigger: query.trigger,
     config: query.config
   });
+  return output;
 };

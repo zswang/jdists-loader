@@ -4,7 +4,3 @@ version = version.replace(/\d+$/, function (value) {
 });
 !#{JSON.stringify(this, null, '  ')}
 /*</jdists>*/
-
-/*<jdists encoding='ejs' data='package.json' export='index.js'>*/
-module.exports = require('./lib/<%- name %>');
-/*</jdists>*/
