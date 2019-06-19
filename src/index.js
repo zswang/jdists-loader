@@ -24,7 +24,9 @@ var path = require("path");
 
 module.exports = function(source) {
   if (this.cacheable) this.cacheable();
-  var query = loaderUtils.parseQuery(this.query);
+
+  var query = this.query;
+
   var output = jdists.build(source, {
     fromString: true,
     path: this.resource,
